@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Letter in Code — For Hadisa Norouzi</title>
+  <meta name="description" content="A small digital gift from one of your students. Happy Teacher's Day, Hadisa Norouzi." />
+
+  <!-- Elegant typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#07121F",
+            midnight: "#0B1020",
+            warm: "#FAF8F6",
+            lavender: "#7C6EE6",
+            gold: "#D4AF6A"
+          },
+          fontFamily: {
+            serif: ["Cormorant Garamond", "Georgia", "serif"],
+            sans: ["Inter", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-navy text-warm font-sans font-light antialiased overflow-x-hidden">
+
+  <!-- ============================================================
+       SVG ICON SPRITE
+       ============================================================ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-file-code" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m10 13-2 2 2 2M14 13l2 2-2 2"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor" stroke="none"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor" stroke="none"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor" stroke="none"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-braces" viewBox="0 0 24 24"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></symbol>
+    <symbol id="i-git" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+    <symbol id="i-atom" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></symbol>
+    <symbol id="i-sunrise" viewBox="0 0 24 24"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.58"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.58" x2="19.78" y2="10.22"/><line x1="23" y1="22" x2="1" y2="22"/><polyline points="8 6 12 2 16 6"/></symbol>
+    <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></symbol>
+    <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.611 1.611a2.404 2.404 0 0 1-1.704.706 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+    <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></symbol>
+    <symbol id="i-signpost" viewBox="0 0 24 24"><path d="M12 13v8"/><path d="M12 3v3"/><path d="M18 6a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/><path d="M19 3v4M17 5h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></symbol>
+    <symbol id="i-arrow-lr" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  </svg>
+
+  <!-- ============================================================
+       PART 1 — CINEMATIC INTRO
+       ============================================================ -->
+  <div id="cinematicIntro">
+    <canvas id="introCanvas"></canvas>
+    <div class="intro-stage">
+      <p class="intro-line" id="introLine1">Some people teach lessons.</p>
+      <p class="intro-line" id="introLine2">Some people change the way we learn.</p>
+      <p class="intro-line" id="introLine3">And some become part of our journey.</p>
+
+      <div class="intro-reveal" id="introReveal">
+        <h1 class="intro-name">  Teacher Sudabeh </h1>
+        <div class="intro-gold-line"><span></span></div>
+        <p class="intro-subtitle">A small digital gift from one of your students.</p>
+        <button id="enterBtn" class="enter-btn">
+          Enter My Story
+          <svg class="ic ic-sm"><use href="#i-arrow-right"></use></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN SITE
+       ============================================================ -->
+  <main id="mainSite" class="relative z-10">
+
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- ============================================================
+         PART 2 — HERO
+         ============================================================ -->
+    <section id="hero" class="hero-bg relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="relative z-10 text-center px-6 pt-24 pb-32 max-w-5xl mx-auto">
+        <p class="hero-kicker reveal-on-enter">A Letter in Code</p>
+        <h1 class="reveal-on-enter font-serif font-medium leading-[1.12] text-[clamp(2.4rem,6vw,4.6rem)] mb-8">
+          For the teacher who taught me<br /><em class="text-gold">more than code.</em>
+        </h1>
+        <p class="reveal-on-enter text-warm/55 text-[clamp(1rem,2vw,1.2rem)] leading-loose mb-12">
+          You taught me how to learn,<br />
+          how to keep going,<br />
+          and how to turn an idea into something real.
+        </p>
+        <div class="reveal-on-enter relative inline-block">
+          <span class="hero-name-glow" aria-hidden="true"></span>
+          <span class="hero-name relative font-serif text-[clamp(1.3rem,3vw,1.9rem)] tracking-[0.22em] uppercase border-y border-warm/10 px-8 py-4">Teacher Sudabeh</span>
+        </div>
+      </div>
+      <div class="scroll-indicator reveal-on-enter">
+        <span>Scroll to discover the story</span>
+        <svg class="ic ic-sm text-gold"><use href="#i-arrow-down"></use></svg>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 3 — WHERE IT STARTED
+         ============================================================ -->
+    <section id="origin" class="origin-bg relative py-[clamp(6rem,14vh,10rem)]">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="chapter reveal">Chapter One</p>
+        <h2 class="section-title reveal">Where My Journey Began</h2>
+
+        <div class="mt-16 mb-8 flex flex-col gap-10">
+          <p class="origin-line reveal">I didn't know where to start.</p>
+          <p class="origin-line reveal">Code looked difficult.</p>
+          <p class="origin-line reveal">Projects felt impossible.</p>
+          <p class="origin-line reveal">Sometimes I didn't know what to do next.</p>
+        </div>
+
+        <div class="origin-turn text-center px-8 py-16 mt-8">
+          <p class="origin-hope reveal">But someone showed me that difficult things can be learned.</p>
+          <p class="origin-you reveal">That someone was <span class="gold-em">you</span>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 4 — WHAT I LEARNED (orbit system)
+         ============================================================ -->
+    <section id="learning" class="learning-bg relative py-[clamp(6rem,14vh,10rem)]">
+      <div class="max-w-5xl mx-auto px-6">
+        <p class="chapter reveal">Chapter Two</p>
+        <h2 class="section-title reveal">What You Helped Me Discover</h2>
+        <p class="section-sub reveal">Hover to explore. Click to remember why it mattered.</p>
+
+        <div class="orbit-wrap-scale reveal">
+          <div class="orbit-stage" id="orbitStage">
+            <svg class="orbit-lines" viewBox="0 0 600 600" aria-hidden="true">
+              <line x1="300" y1="300" x2="300" y2="70"  class="orbit-line" data-angle="-90" />
+              <line x1="300" y1="300" x2="499" y2="185" class="orbit-line" data-angle="-30" />
+              <line x1="300" y1="300" x2="499" y2="415" class="orbit-line" data-angle="30" />
+              <line x1="300" y1="300" x2="300" y2="530" class="orbit-line" data-angle="90" />
+              <line x1="300" y1="300" x2="101" y2="415" class="orbit-line" data-angle="150" />
+              <line x1="300" y1="300" x2="101" y2="185" class="orbit-line" data-angle="210" />
+              <circle cx="300" cy="300" r="230" class="orbit-ring" />
+            </svg>
+
+            <div class="orbit-center">
+              <span class="orbit-center-label">LEARNING</span>
+            </div>
+
+            <button class="orbit-node" style="--angle:-90deg" data-skill="html"
+              data-name="HTML" data-icon="i-file-code"
+              data-desc="One of the first steps that helped me understand how websites are built."
+              data-why="It showed me that everything on the web has a structure — and that I could learn to build that structure myself.">
+              <svg class="ic"><use href="#i-file-code"></use></svg><span>HTML</span>
+            </button>
+
+            <button class="orbit-node" style="--angle:-30deg" data-skill="css"
+              data-name="CSS" data-icon="i-palette"
+              data-desc="The moment my pages started to look like something real."
+              data-why="CSS taught me that details matter — spacing, color, and care turn plain structure into something beautiful.">
+              <svg class="ic"><use href="#i-palette"></use></svg><span>CSS</span>
+            </button>
+
+            <button class="orbit-node" style="--angle:30deg" data-skill="tailwind"
+              data-name="Tailwind CSS" data-icon="i-layout"
+              data-desc="Learning to build faster and smarter with a powerful framework."
+              data-why="It taught me that using the right tools isn't a shortcut — it's a skill. Layouts that once took days began taking hours.">
+              <svg class="ic"><use href="#i-layout"></use></svg><span>Bootstrap</span>
+            </button>
+
+            <button class="orbit-node" style="--angle:90deg" data-skill="javascript"
+              data-name="JavaScript" data-icon="i-braces"
+              data-desc="The day my websites started to think, move, and respond."
+              data-why="JavaScript was the hardest step — and the most rewarding. It taught me logic, patience, and the joy of solving problems.">
+              <svg class="ic"><use href="#i-braces"></use></svg><span>JavaScript</span>
+            </button>
+
+            <button class="orbit-node" style="--angle:150deg" data-skill="git"
+              data-name="Git &amp; GitHub" data-icon="i-git"
+              data-desc="Understanding how real developers save, share, and grow their work."
+              data-why="Version control taught me that progress is a series of small, saved steps — and that mistakes can always be recovered from.">
+              <svg class="ic"><use href="#i-git"></use></svg><span>Git &amp; GitHub</span>
+            </button>
+
+            <button class="orbit-node" style="--angle:210deg" data-skill="react"
+              data-name="React" data-icon="i-atom"
+              data-desc="Stepping into modern development and component thinking."
+              data-why="React showed me how far I had come — from a first HTML line to building modern, interactive applications.">
+              <svg class="ic"><use href="#i-atom"></use></svg><span>React</span>
+            </button>
+          </div>
+        </div>
+
+        <p class="orbit-desc" id="orbitDesc" aria-live="polite">&nbsp;</p>
+      </div>
+    </section>
+
+    <!-- Skill modal -->
+    <div class="cx-modal" id="skillModal" aria-hidden="true">
+      <div class="cx-backdrop" data-close></div>
+      <div class="cx-dialog cx-dialog-sm" role="dialog" aria-modal="true" aria-labelledby="skillModalTitle">
+        <button class="cx-x" data-close aria-label="Close"><svg class="ic ic-sm"><use href="#i-x"></use></svg></button>
+        <div class="text-center px-10 py-12">
+          <div class="skill-modal-icon mx-auto mb-6"><span id="skillModalIcon"></span></div>
+          <h3 class="skill-modal-title font-serif text-3xl font-medium mb-4" id="skillModalTitle"></h3>
+          <p class="text-warm/80 leading-relaxed" id="skillModalDesc"></p>
+          <div class="skill-modal-divider mx-auto my-7"><span></span></div>
+          <p class="skill-modal-why font-serif italic text-lg leading-relaxed text-warm/55" id="skillModalWhy"></p>
+          <p class="skill-modal-step mt-8 mb-0">Another step forward.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PART 5 — MORE THAN CODE
+         ============================================================ -->
+    <section id="values" class="values-bg relative py-[clamp(6rem,14vh,10rem)]">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="chapter reveal">Chapter Three</p>
+        <h2 class="section-title reveal">But You Taught Me More Than Technology.</h2>
+
+        <div class="mt-14">
+          <div class="value-item reveal">
+            <span class="value-icon"><svg class="ic"><use href="#i-sunrise"></use></svg></span>
+            <div>
+              <h3>Confidence</h3>
+              <p>You taught me how to build websites.<br />But you also taught me to believe that <em>I can build something.</em></p>
+            </div>
+          </div>
+
+          <div class="value-item reveal">
+            <span class="value-icon"><svg class="ic"><use href="#i-hourglass"></use></svg></span>
+            <div>
+              <h3>Patience</h3>
+              <p>You taught me HTML.<br />But you also taught me <em>patience.</em></p>
+            </div>
+          </div>
+
+          <div class="value-item reveal">
+            <span class="value-icon"><svg class="ic"><use href="#i-puzzle"></use></svg></span>
+            <div>
+              <h3>Problem Solving</h3>
+              <p>You taught me JavaScript.<br />But you also taught me <em>problem solving.</em></p>
+            </div>
+          </div>
+
+          <div class="value-item reveal">
+            <span class="value-icon"><svg class="ic"><use href="#i-compass"></use></svg></span>
+            <div>
+              <h3>Curiosity</h3>
+              <p>You answered my questions.<br />But you also taught me <em>to ask better ones.</em></p>
+            </div>
+          </div>
+
+          <div class="value-item reveal">
+            <span class="value-icon"><svg class="ic"><use href="#i-repeat"></use></svg></span>
+            <div>
+              <h3>Persistence</h3>
+              <p>You showed me that errors are not failures.<br />They are simply <em>the next thing to understand.</em></p>
+            </div>
+          </div>
+
+          <div class="value-item reveal">
+            <span class="value-icon"><svg class="ic"><use href="#i-sparkles"></use></svg></span>
+            <div>
+              <h3>Creativity</h3>
+              <p>You gave me the tools.<br />But you also gave me <em>the courage to imagine something of my own.</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 6 — TIMELINE
+         ============================================================ -->
+    <section id="journey" class="relative py-[clamp(6rem,14vh,10rem)] bg-navy">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="chapter reveal">Chapter Four</p>
+        <h2 class="section-title reveal">Every Step Became Part of the Story</h2>
+
+        <div class="timeline mt-16" id="timeline">
+          <div class="timeline-track"><div class="timeline-fill" id="timelineFill"></div></div>
+
+          <div class="timeline-item reveal" data-milestone>
+            <div class="timeline-node"><svg class="ic"><use href="#i-flag"></use></svg></div>
+            <div class="timeline-content">
+              <h3>The Beginning</h3>
+              <p>A student with questions and no idea where to start.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-milestone>
+            <div class="timeline-node"><svg class="ic"><use href="#i-file-code"></use></svg></div>
+            <div class="timeline-content">
+              <h3>HTML</h3>
+              <p>The first lines of structure. The first small victory.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-milestone>
+            <div class="timeline-node"><svg class="ic"><use href="#i-palette"></use></svg></div>
+            <div class="timeline-content">
+              <h3>CSS</h3>
+              <p>Pages came alive with color, space, and design.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-milestone>
+            <div class="timeline-node"><svg class="ic"><use href="#i-layout"></use></svg></div>
+            <div class="timeline-content">
+              <h3>Bootstrap</h3>
+              <p>Learning to build faster, cleaner, and with real systems.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-milestone>
+            <div class="timeline-node"><svg class="ic"><use href="#i-braces"></use></svg></div>
+            <div class="timeline-content">
+              <h3>JavaScript</h3>
+              <p>The hardest climb — and the moment everything started to make sense.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-milestone>
+            <div class="timeline-node"><svg class="ic"><use href="#i-git"></use></svg></div>
+            <div class="timeline-content">
+              <h3>Git &amp; GitHub</h3>
+              <p>Every commit became proof of progress.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-milestone>
+            <div class="timeline-node"><svg class="ic"><use href="#i-atom"></use></svg></div>
+            <div class="timeline-content">
+              <h3>React</h3>
+              <p>Modern thinking. Components. A new level of building.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-milestone>
+            <div class="timeline-node"><svg class="ic"><use href="#i-layers"></use></svg></div>
+            <div class="timeline-content">
+              <h3>Real Projects</h3>
+              <p>Ideas turned into things people could actually use.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-milestone>
+            <div class="timeline-node"><svg class="ic"><use href="#i-infinity"></use></svg></div>
+            <div class="timeline-content">
+              <h3>The Journey Continues...</h3>
+              <p>Because learning never really ends.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-ending text-center mt-20">
+          <p class="reveal">This is not the end.</p>
+          <p class="timeline-beginning reveal">It is only <span class="gold-em">the beginning</span>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 7 — THINGS I CAN BUILD TODAY
+         ============================================================ -->
+    <section id="projects" class="projects-bg relative py-[clamp(6rem,14vh,10rem)]">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="chapter reveal">Chapter Five</p>
+        <h2 class="section-title reveal">Things I Can Build Today</h2>
+        <p class="section-sub reveal">Every project is a small reminder of how far the journey has taken me.</p>
+
+        <div class="milestone-list mt-14">
+          <article class="milestone reveal">
+            <div class="milestone-num">01</div>
+            <div class="milestone-body">
+              <h3>University Website</h3>
+              <p>A full website built from structure to style — proof that "impossible" projects are just a series of small steps.</p>
+            </div>
+            <svg class="ic milestone-arrow"><use href="#i-arrow-up-right"></use></svg>
+          </article>
+
+          <article class="milestone reveal">
+            <div class="milestone-num">02</div>
+            <div class="milestone-body">
+              <h3>Lifeline Blood Donation Website</h3>
+              <p>Code with a purpose — a project that taught me technology can genuinely help people.</p>
+            </div>
+            <svg class="ic milestone-arrow"><use href="#i-arrow-up-right"></use></svg>
+          </article>
+
+          <article class="milestone reveal">
+            <div class="milestone-num">03</div>
+            <div class="milestone-body">
+              <h3>Personal Web Projects</h3>
+              <p>Small ideas that became real pages. Each one a little more confident than the last.</p>
+            </div>
+            <svg class="ic milestone-arrow"><use href="#i-arrow-up-right"></use></svg>
+          </article>
+
+          <article class="milestone reveal">
+            <div class="milestone-num">04</div>
+            <div class="milestone-body">
+              <h3>Learning Projects</h3>
+              <p>The quiet practice behind every visible result — experiments, mistakes, and growth.</p>
+            </div>
+            <svg class="ic milestone-arrow"><use href="#i-arrow-up-right"></use></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 8 — BEFORE / AFTER
+         ============================================================ -->
+    <section id="transformation" class="relative py-[clamp(6rem,14vh,10rem)] bg-[#081524]">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="chapter reveal">Chapter Six</p>
+        <h2 class="section-title reveal">The Same Student. A Different Story.</h2>
+        <p class="section-sub reveal">Drag the line — or simply watch what changed.</p>
+
+        <div class="ba-frame reveal" id="baFrame">
+          <div class="ba-pane ba-before">
+            <span class="ba-label">Before</span>
+            <ul>
+              <li>I didn't know where to start.</li>
+              <li>I was afraid of difficult code.</li>
+              <li>I didn't know how projects came together.</li>
+            </ul>
+          </div>
+          <div class="ba-pane ba-after" id="baAfter">
+            <span class="ba-label ba-label-gold">After</span>
+            <ul>
+              <li>I can start.</li>
+              <li>I can learn.</li>
+              <li>I can build.</li>
+              <li>I can solve problems.</li>
+            </ul>
+          </div>
+          <div class="ba-divider" id="baDivider" role="slider" aria-label="Before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+            <div class="ba-handle"><svg class="ic ic-sm"><use href="#i-arrow-lr"></use></svg></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 9 — MEMORY WALL
+         ============================================================ -->
+    <section id="memories" class="memories-bg relative py-[clamp(6rem,14vh,10rem)]">
+      <div class="max-w-5xl mx-auto px-6">
+        <p class="chapter reveal">Chapter Seven</p>
+        <h2 class="section-title reveal">Little Pieces of the Journey</h2>
+        <p class="section-sub reveal">Moments worth keeping. Click any piece to see it closer.</p>
+
+        <div class="memory-grid reveal" id="memoryGrid">
+          <!-- Tiles are generated by script.js — drop images into /images
+               named memory-1.jpg ... memory-8.jpg to replace the placeholders. -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Memory modal -->
+    <div class="cx-modal" id="memoryModal" aria-hidden="true">
+      <div class="cx-backdrop" data-close></div>
+      <div class="cx-dialog cx-dialog-lg" role="dialog" aria-modal="true" aria-labelledby="memoryModalCaption">
+        <button class="cx-x" data-close aria-label="Close"><svg class="ic ic-sm"><use href="#i-x"></use></svg></button>
+        <div class="p-6 text-center">
+          <div id="memoryModalMedia"></div>
+          <h4 class="memory-modal-caption" id="memoryModalCaption"></h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PART 10 — THE LETTER
+         ============================================================ -->
+    <section id="letter" class="letter-bg relative py-[clamp(6rem,14vh,10rem)]">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="chapter reveal">Chapter Eight</p>
+        <h2 class="section-title reveal">A Letter to My Teacher</h2>
+
+        <div class="letter-paper reveal mt-16">
+          <div class="letter-ornament"><svg class="ic"><use href="#i-mail"></use></svg></div>
+          <div class="letter-body">
+            <p class="letter-greeting">Dear Teacher Sudabeh,</p>
+            <p>There are things that are difficult to express with a simple thank you.</p>
+            <p>You gave me knowledge, but you also gave me something more valuable: the courage to keep learning.</p>
+            <p>Every new skill I learned became a reminder that difficult things can become possible when someone is willing to guide you. Today, when I write code, build projects, solve problems, or learn something new, I remember that every skill has a beginning.</p>
+            <p>And somewhere in that beginning, there was a teacher who helped me take my first steps.</p>
+            <p>Thank you for your patience.<br />Thank you for your guidance.<br />Thank you for believing in learning.</p>
+            <p class="letter-wish">Happy Teacher's Day,Teacher Sudabeh.</p>
+            <p>This little website is my small way of saying:</p>
+            <p class="letter-thanks">Thank you.</p>
+          </div>
+          <div class="letter-sign">
+            <p>With respect and gratitude,</p>
+            <p class="letter-signature">Mursal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PART 11 — SECRET MESSAGE
+         ============================================================ -->
+    <section id="secret" class="relative py-[clamp(5rem,12vh,8rem)] bg-navy">
+      <div class="text-center px-6">
+        <button id="secretBtn" class="secret-btn reveal">
+          <span class="secret-btn-dot"></span>
+          One More Thing...
+        </button>
+      </div>
+    </section>
+
+    <div id="secretOverlay" aria-hidden="true">
+      <div class="secret-stage">
+        <p class="secret-line" id="secretLine1">Teacher Sudabeh...</p>
+        <p class="secret-line" id="secretLine2">This website is not my biggest project.</p>
+        <p class="secret-line" id="secretLine3">But it might be my most meaningful one.</p>
+        <p class="secret-line" id="secretLine4">Because every line of code here carries a little bit of gratitude.</p>
+        <p class="secret-line secret-line-final" id="secretLine5">Thank you for being part of my journey.</p>
+        <button id="secretClose" class="secret-close" aria-label="Close"><svg class="ic ic-sm"><use href="#i-x"></use></svg></button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PART 12 — FINAL SURPRISE
+         ============================================================ -->
+    <section id="finale" class="finale-bg relative min-h-screen flex items-center justify-center overflow-hidden">
+      <canvas id="finaleCanvas"></canvas>
+      <div class="relative z-10 text-center px-6 py-24 max-w-4xl mx-auto">
+        <p class="finale-kicker reveal font-serif italic text-lg text-warm/55 max-w-lg mx-auto mb-12">And so, this letter ends the way it began — with gratitude.</p>
+        <h2 class="finale-title reveal">Happy Teacher's Day,</h2>
+        <h1 class="finale-name reveal">Teacher Sudabeh</h1>
+        <div class="finale-gold-line reveal mx-auto mb-10"><span></span></div>
+        <p class="finale-sign reveal">
+          With respect and gratitude,<br />
+          <span class="finale-signature">Mursal</span>
+        </p>
+        <p class="finale-code reveal">&lt;/ made with code, and with heart &gt;</p>
+        <a href="#hero" class="finale-replay reveal">
+          <svg class="ic ic-sm"><use href="#i-arrow-up"></use></svg>
+          Return to the beginning
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer relative z-10 text-center py-10 px-4 bg-midnight border-t border-warm/10">
+      <p class="text-warm/35 text-xs tracking-[0.18em] uppercase m-0">A Letter in Code &middot; For Hadisa Norouzi &middot; By Mursal</p>
+    </footer>
+  </main>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
